@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Bitcount Single Ink';
+    src: url('BitcountSingleInk-Regular.woff2') format('woff2'),
+        url('BitcountSingleInk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

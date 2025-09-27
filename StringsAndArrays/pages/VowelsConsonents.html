@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels and Consonants</title>
+
+    <link rel="stylesheet" href="../assets/css/common/style.css">
+</head>
+
+<body class="theme-10">
+    <div class="container">
+        <div class="app-card">
+            <header class="app-header">
+                <h1 class="app-title">Vowels and Consonants</h1>
+                <p class="app-subtitle">Count the number of vowels and consonants in a string.</p>
+            </header>
+
+            <div class="form-group">
+                <label for="strInput" class="form-label">Word or Phrase</label>
+                <input type="text" id="strInput" class="form-input" placeholder="Enter a word or phrase.">
+            </div>
+
+            <button id="findBtn" class="btn-primary">Find</button>
+            <button class="reset-btn" id="reset-btn">Reset</button>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-label">Result</div>
+                <div id="resultDisplay" class="result-display"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jQuery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#findBtn").on("click", function () {
+
+                let str = String(document.getElementById("strInput").value);
+                let ans = document.getElementById("resultDisplay");
+                let resultSection = document.getElementById("resultSection");
+
+                const vowelList = /[aeiou]/i;
+                const consonantList = /[b-df-hj-np-tv-z]/i;
+
+                let vowelCount = 0;
+                let consonantCount = 0;
+
+                $(ans).removeClass("error");
+
+                if (str === "") {
+                    $(ans).text("PLEASE ENTER A WORD OR SENTENCE.").addClass("error");
+                    $(resultSection).css("display", "block");
+                    return;
+                }
+
+                str.split("").forEach((char) => {
+                    if (vowelList.test(char)) {
+                        vowelCount++;
+                    } else if (consonantList.test(char)) {
+                        consonantCount++;
+                    }
+                })
+
+                $("#resultDisplay").html(`
+                <p>Vowels: ${vowelCount}</p>
+                <p>Consonants: ${consonantCount}</p>
+                `);
+                $(resultSection).css("display", "block");
+            })
+
+            $("#reset-btn").on("click", function(){
+                $("#strInput").val("");
+                $("resultDisplay").text("").removeClass("error");
+                $("resultSection").hide();
+            })
+        })
+    </script>
+</body>
+
+</html>

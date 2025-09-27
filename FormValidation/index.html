@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <section class="form-section">
+        <div class="container form-container">
+            <form id="rgForm">
+                <div class="row px-sm-3">
+                    <p class="text-center title">Welcome <br><span>to sign up</span></p>
+                    <div class="col-12 mt-1">
+                        <input type="text" class="inp" id="name" placeholder="Student Name">
+                        <p id="name-validation" class="error-box"></p>
+                    </div>
+
+                    <div class="col-12 mt-1">
+                        <input type="email" class="inp" id="email" placeholder="Email">
+                        <p id="email-validation" class="error-box"></p>
+                    </div>
+
+                    <div class="col-12 mt-1">
+                        <input type="password" class="inp" id="pass" placeholder="Password">
+                        <p id="pass-validation" class="error-box"></p>
+                    </div>
+
+                    <div class="col-12 mt-1">
+                        <input type="password" class="inp" id="cpass" placeholder="Confirm password">
+                        <p id="cpass-validation" class="error-box"></p>
+                    </div>
+
+                    <div class="col-12 mt-1 select-wrapper">
+                        <!-- <label for="course" class="form-label">Select Course</label> -->
+                        <select id="course" class="inp">
+                            <option value="default">Select a course</option>
+                            <option value="DS">Data Science</option>
+                            <option value="FSD">Full Stack Developer</option>
+                            <option value="UIUX">UI/UX</option>
+                            <option value="CS">Cyber Security</option>
+                            <option value="AIML">AI/ML</option>
+                        </select>
+                        <p id="course-validation" class="error-box"></p>
+                    </div>
+
+                </div>
+
+                <div class="w-100 text-center">
+                    <button class="submit" id="submitBtn">submit</button>
+
+                </div>
+
+
+            </form>
+        </div>
+    </section>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/style.js"></script>
+    <script>
+
+    </script>
+
+</body>
+
+</html>

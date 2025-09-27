@@ -1,0 +1,277 @@
+@import url(../../fonts/stylesheet.css);
+
+:root {
+  /* Light theme */
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #eef2ff;
+  --background: #f0f4ff;
+  --surface: rgba(255, 255, 255, 0.5);
+  --surface-hover: rgba(255, 255, 255, 0.95);
+  --text-primary: #2c3e50;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --border: rgba(220, 225, 230, 0.8);
+  --border-focus: var(--primary-color);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --gradient-bg: linear-gradient(
+    135deg,
+    rgb(220, 225, 245),
+    rgb(205, 215, 240),
+    rgb(225, 215, 245)
+  );
+  --glass-bg: rgba(255, 255, 255, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #818cf8;
+    --primary-hover: #6366f1;
+    --primary-light: #312e81;
+    --background: #0f172a;
+    --surface: rgba(30, 41, 59, 0.9);
+    --surface-hover: rgba(30, 41, 59, 0.95);
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border: rgba(51, 65, 85, 0.8);
+    --border-focus: var(--primary-color);
+    --gradient-bg: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    --glass-bg: rgba(30, 41, 59, 0.25);
+    --glass-border: rgba(148, 163, 184, 0.18);
+  }
+}
+
+/* =========
+ Base
+========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter 18pt", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  background: var(--gradient-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  font-size: clamp(14px, 1.5vw, 16px);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem);
+}
+
+/* =========
+ Header
+========== */
+.directory-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.directory-title {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  letter-spacing: -0.025em;
+}
+
+.directory-title i {
+  color: var(--primary-color);
+}
+
+.directory-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* =========
+ Tools Grid
+========== */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* =========
+ Tool Card
+========== */
+.tool-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: clamp(16px, 2vw, 20px);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+  min-height: 240px;
+  animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* =========
+ Icon + Title
+========== */
+.tool-icon {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.tool-title {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.015em;
+}
+
+/* =========
+ Description (hidden by default)
+========== */
+.tool-description {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0.5rem 0 1rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.tool-card:hover .tool-description {
+  opacity: 1;
+  max-height: 150px;
+}
+
+/* =========
+ Feature Tags
+========== */
+.tool-features {
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+.feature-tag {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  margin: 0.25rem 0.25rem 0 0;
+  white-space: nowrap;
+}
+
+/* =========
+ Link CTA
+========== */
+.tool-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.tool-link i {
+  transition: transform 0.25s ease;
+}
+
+.tool-link:hover {
+  color: var(--primary-hover);
+  transform: translateX(2px);
+}
+
+.tool-link:hover i {
+  transform: translateX(4px);
+}
+
+/* =========
+ Animations
+========== */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========
+ Responsive
+========== */
+@media (max-width: 768px) {
+  .tool-card {
+    min-height: 200px;
+  }
+}
+/* =========
+ Accent Colors (Auto-assign with nth-child)
+========== */
+.tools-grid .tool-card:nth-child(10n+1) { --accent: #4f46e5; }   /* Indigo */
+.tools-grid .tool-card:nth-child(10n+2) { --accent: #06b6d4; }   /* Cyan */
+.tools-grid .tool-card:nth-child(10n+3) { --accent: #10b981; }   /* Emerald */
+.tools-grid .tool-card:nth-child(10n+4) { --accent: #f59e0b; }   /* Amber */
+.tools-grid .tool-card:nth-child(10n+5) { --accent: #ef4444; }   /* Red */
+.tools-grid .tool-card:nth-child(10n+6) { --accent: #ec4899; }   /* Pink */
+.tools-grid .tool-card:nth-child(10n+7) { --accent: #8b5cf6; }   /* Violet */
+.tools-grid .tool-card:nth-child(10n+8) { --accent: #0ea5e9; }   /* Sky Blue */
+.tools-grid .tool-card:nth-child(10n+9) { --accent: #22c55e; }   /* Green */
+.tools-grid .tool-card:nth-child(10n+10) { --accent: #a855f7; }  /* Purple */
+
+/* Apply accents */
+.tool-card {
+  --accent: var(--primary-color); /* fallback */
+}
+
+.tool-card .tool-icon,
+.tool-card .feature-tag,
+.tool-card .tool-link {
+  color: var(--accent);
+}
+
+.tool-card .feature-tag {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.tool-card .tool-link:hover {
+  color: color-mix(in srgb, var(--accent) 80%, white 20%);
+}
+

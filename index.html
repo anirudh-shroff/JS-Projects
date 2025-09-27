@@ -1,11 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+    <link rel="stylesheet" href="./assets/css/bootsrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    
+
+    <div class="text-center my-3">
+        <button id="themeToggle" class="btn btn-secondary">Toggle Dark/Light Mode</button>
+    </div>
+    <section>
+        <div class="container ">
+
+            <div class="text-center">
+                <h1 class="display-1 my-5">JavaScript Projects</h1>
+            </div>
+            <div class="row gy-5">
+                <!-- Basic Calculator -->
+                <div class="col-12">
+                    <div class="card text-center tool-card border-0">
+                        <div class="card-header pt-2 pb-1">
+                            01
+                        </div>
+                        <div class="card-body py-2">
+                            <h3 class="card-title">Basic Calculator</h3>
+                            <p class="card-subtitle tool-description">check out the basic calculator</p>
+                            <a href="./PR-1/index.html" class="btn btn-danger">Click here</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Form Validation -->
+                <div class="col-12">
+                    <div class="card text-center tool-card border-0">
+                        <div class="card-header pt-2 pb-1">
+                            02
+                        </div>
+                        <div class="card-body py-2">
+                            <h3 class="card-title">Form Validation</h3>
+                            <p class="card-subtitle tool-description">check out the form validation</p>
+                            <a href="./FormValidation/index.html" class="btn btn-danger">Click here</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card text-center tool-card border-0">
+                        <div class="card-header pt-2 pb-1">
+                            03
+                        </div>
+                        <div class="card-body py-2">
+                            <h3 class="card-title">Min Max Finder</h3>
+                            <p class="card-subtitle tool-description">Generate random numbers and find their maximum and minimum value,
+                                for fun</p>
+                            <a href="./MinMax/index.html" class="btn btn-danger">Click here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card text-center tool-card border-0">
+                        <div class="card-header pt-2 pb-1">
+                            04
+                        </div>
+                        <div class="card-body py-2">
+                            <h3 class="card-title">Tic Tac Toe</h3>
+                            <p class="card-subtitle tool-description">Have a quick match of TicTacToe with a friend, looser buys a treat
+                                for the winner</p>
+                            <a href="./TicTacToe/index.html" class="btn btn-danger">Click here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card text-center tool-card border-0">
+                        <div class="card-header pt-2 pb-1">
+                            05
+                        </div>
+                        <div class="card-body py-2">
+                            <h3 class="card-title">String and Arrays</h3>
+                            <p class="card-subtitle tool-description text-">Explore different tools to check your mastery over english
+                                language
+                            </p>
+                            <a href="./StringsAndArrays/index.html" class="btn btn-danger">Click here</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+    </section>
+
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    const mainTitle = document.querySelector('h1');
+    const cards = document.querySelectorAll('.card');
+    const headers = document.querySelectorAll('.card-header');
+    const titles = document.querySelectorAll('.card-title');
+    const subtitles = document.querySelectorAll('.card-subtitle tool-description');
+    const buttons = document.querySelectorAll('.btn-danger');
+
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+        mainTitle.classList.toggle('dark-mode');
+        mainTitle.classList.toggle('light-mode');
+
+        cards.forEach(card => {
+            card.classList.toggle('dark-mode');
+            card.classList.toggle('light-mode');
+        });
+
+        headers.forEach(header => {
+            header.classList.toggle('dark-mode');
+            header.classList.toggle('light-mode');
+        });
+
+        titles.forEach(title => {
+            title.classList.toggle('dark-mode');
+            title.classList.toggle('light-mode');
+        });
+
+        subtitles.forEach(subtitle => {
+            subtitle.classList.toggle('dark-mode');
+            subtitle.classList.toggle('light-mode');
+        });
+
+        buttons.forEach(button => {
+            button.classList.toggle('dark-mode');
+            button.classList.toggle('light-mode');
+        });
+    });
+
+    // Set default theme to light mode
+    body.classList.add('light-mode');
+    mainTitle.classList.add('light-mode');
+    cards.forEach(card => card.classList.add('light-mode'));
+    headers.forEach(header => header.classList.add('light-mode'));
+    titles.forEach(title => title.classList.add('light-mode'));
+    subtitles.forEach(subtitle => subtitle.classList.add('light-mode'));
+    buttons.forEach(button => button.classList.add('light-mode'));
+</script>
 </body>
+
 </html>

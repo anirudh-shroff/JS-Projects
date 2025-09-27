@@ -1,0 +1,242 @@
+/* ===== Retro Mario Tic Tac Toe ===== */
+
+/* Pixel font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --bg-color: #87ceeb;       /* Mario sky blue */
+  --ground-color: #f4a261;   /* Mario ground */
+  --border-color: #2d2d2d;
+  --highlight: #ffd60a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: var(--bg-color) url('./assets/images/mario-bg.png') repeat-x bottom;
+  background-size: contain;
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #ffcc00;
+  text-shadow: 3px 3px #000;
+  margin-bottom: 20px;
+}
+
+/* Container */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.4);
+  border: 4px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 0 #000;
+}
+
+/* Player selection */
+.choose-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.player-btn-group {
+  display: flex;
+  gap: 20px;
+}
+
+.player {
+  background: var(--ground-color);
+  border: 4px solid var(--border-color);
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.player:hover {
+  transform: scale(1.1);
+  background: #e76f51;
+}
+
+/* Game wrapper */
+.game-wrapper {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.score-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.score {
+  margin-top: 5px;
+}
+
+#turn {
+  font-size: 0.9rem;
+  color: var(--highlight);
+  text-shadow: 2px 2px #000;
+}
+
+/* Game board */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.box {
+  aspect-ratio: 1 / 1;
+  background: #ffffff;
+  border: 4px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.box:hover {
+  background: #f1faee;
+  transform: translateY(-2px);
+}
+
+/* X and O icons */
+.x-icon,
+.o-icon {
+  width: 70%;              /* scale relative to box */
+  height: auto;
+  image-rendering: pixelated;
+  display: block;
+  margin: 0 auto;
+}
+
+.win-highlight {
+  background: var(--highlight) !important;
+  animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink {
+  from { background: var(--highlight); }
+  to { background: #fff176; }
+}
+
+/* New Game button */
+#newGame {
+  background: #ffcc00;
+  border: 4px solid var(--border-color);
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s;
+}
+
+#newGame:hover {
+  transform: scale(1.1);
+  background: #ffa600;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .game-board {
+    gap: 5px;
+  }
+
+  .box {
+    font-size: 1.5rem;
+  }
+
+  .x-icon,
+  .o-icon {
+    width: 60%; /* slightly smaller on mobile */
+  }
+
+  #turn {
+    font-size: 0.7rem;
+  }
+}
+
+.corner-gif {
+  position: fixed;       /* stays in place relative to viewport */
+  width: 80px;           /* adjust size */
+  height: auto;
+  z-index: 9999;         /* make sure it’s above everything */
+  pointer-events: none;  /* clicks pass through, won’t block buttons */
+  image-rendering: pixelated; /* retro crisp look */
+}
+
+/* Positioning for each corner */
+.top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.top-right {
+  top: 10px;
+  right: 10px;
+}
+
+.bottom-left {
+  bottom: 10px;
+  left: 10px;
+}
+
+.bottom-right {
+  bottom: 10px;
+  right: 10px;
+}
+
+div:where(.swal2-container) div:where(.swal2-popup) {
+    display: none;
+    position: relative;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0, 100%);
+    width: var(--swal2-width);
+    max-width: 100%;
+    padding: var(--swal2-padding);
+    border: var(--swal2-border);
+    border-radius: var(--swal2-border-radius);
+    background: none;
+    color: #ffcc00;
+    font-family: inherit;
+    font-size: 1rem;
+    container-name: swal2-popup;
+}
