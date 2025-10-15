@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container p-5">
+        <div class="">
+            <form action="" id="forms" class="form-control">
+                <label for="taskInp">Task :</label>
+                <input type="text" name="taskInp" id="taskInp" placeholder="Type here" class="rounded-1"></input>
+                <label for="priority">Priority</label>
+                <select name="Priority" id="priority">
+                    <option value="0">select</option>
+                    <option value="1">High</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Low</option>
+                </select>
+                <button type="button" form="forms" id="add" class="btn btn-danger">Add</button>
+            </form>
+        </div>
+        <div id="Tasks">
+
+        </div>
+    </div>
+</body>
+
+<script src="./assets/js/jQuery-3.7.1.min.js"></script>
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/script.js"></script>
+</html>
