@@ -1,0 +1,23 @@
+*   For Html :
+    -   create three divs;
+        - for heading
+        - for input boxes and button
+            - one input box for task heading & one for task description
+            - priority order selection using select & option
+            - button for adding tasks.
+        - for output
+            - show the tasks created in card format with a button for deletion of that specific task.
+            - Make sure the complete text is shown in it's designated area.
+            - if possible add a extend on hover effect or active
+    
+*   For JS :
+    -   run an event on click for add button;
+        -   store the inputs in objects in array 'tasklist' :
+                task.head       : ""
+                task.dsc        : ""
+                task.priority   : ""
+                task.id         : ""
+        -   push tasks in the form of objects everytime a new task is created
+    -   run an event on click for delete button
+        -   delete respective task using it's unique id
+    -   try for edit option.

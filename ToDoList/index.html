@@ -5,33 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
-    <div class="container p-5">
-        <div class="">
-            <form action="" id="forms" class="form-control">
-                <label for="taskInp">Task :</label>
-                <input type="text" name="taskInp" id="taskInp" placeholder="Type here" class="rounded-1"></input>
-                <label for="priority">Priority</label>
-                <select name="Priority" id="priority">
-                    <option value="0">select</option>
-                    <option value="1">High</option>
-                    <option value="2">Medium</option>
-                    <option value="3">Low</option>
-                </select>
-                <button type="button" form="forms" id="add" class="btn btn-danger">Add</button>
-            </form>
+<body class="container">
+    <div class="tittleSection text-center my-5">
+        <h1 class="">To-Do <span>Lists</span></h1>
+    </div>
+    <div class="inpSection d-flex flex-row justify-content-between align-items-center">
+        <div class="d-flex flex-column inpBox">
+            <div class="d-flex flex-column">
+                <!-- <label for="taskHead" class="tex">Task Heading</label> -->
+                <input type="text" id="taskHead" class="border border-1" placeholder="Add task Heading">
+            </div>
+            <div class="d-flex flex-column">
+                <!-- <label for="textDsc">Task Description</label> -->
+                <input type="text" id="taskDsc" class="border border-1" placeholder="Add task Description">
+            </div>
         </div>
-        <div id="Tasks">
+        <div class="priorityOpt d-flex flex-column">
+            <label for="prioritySelect">Priority Level</label>
+            <select name="" id="prioritySelect">
+                <option value="default" disabled selected>Select</option>
+                <option value="high">High Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="low">Low Priority</option>
+            </select>
+        </div>
+        <button class="d-flex align-items-center justify-content-center gap-1" id="addBtn">
+            <!-- <span><img src="./assets/images/add-circle-fill.svg" alt=""></span> -->
+            <span>ADD</span>
+        </button>
+    </div>
+    <div class="taskSection my-lg-3">
+        <div class="d-flex">
+            <select name="" id="filter" class="filter">
+                <option value="all" selected>All Select</option>
+                <option value="high">High Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="low">Low Priority</option>
+            </select>
+        </div>
+        <div class="taskList" id="taskList">
 
+        </div>
+        <div class="empty row justify-content-center" id="empty">
+            <h3 class="text-center">What's on your mind?</h3>
+            <p class="text-center">Let's go get some work done</p>
         </div>
     </div>
+
+    <script src="./assets/js/jQuery-3.7.1.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
-<script src="./assets/js/jQuery-3.7.1.min.js"></script>
-<script src="./assets/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/js/script.js"></script>
 </html>

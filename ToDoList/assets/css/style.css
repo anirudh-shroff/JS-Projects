@@ -1,0 +1,256 @@
+/* -------------------------
+   GLOBAL STYLING
+-------------------------- */
+input:focus {
+    border-color: #2d7ef8f5;
+    outline: none;
+}
+
+
+body {
+    background: radial-gradient(circle, #ffffff 0%, #94bbe9 100%);
+    font-family: Arial, sans-serif;
+    padding-bottom: 50px;
+}
+
+/* Page Title */
+.tittleSection h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+.tittleSection span {
+    color: #0d6efd;
+}
+
+/* -------------------------
+   INPUT SECTION
+-------------------------- */
+
+#taskHead,
+#taskDsc {
+    width: 30vw;
+}
+
+.inpSection {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.inpSection label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Inputs & Selects */
+.inpSection input,
+.inpSection select {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+}
+.inpSection input::placeholder{
+    font-style: italic;
+}
+.priorityOpt:hover {
+    color: #0b5ed7;
+}
+
+/* Add Button */
+#addBtn {
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    transition: 0.3s ease;
+}
+
+#addBtn:hover {
+    background: #0b5ed7;
+}
+
+/* -------------------------
+   TASK SECTION
+-------------------------- */
+.priority-high {
+    border-left: 6px solid #dc3545 !important;
+    border-bottom: 6px solid #dc3545 !important;
+}
+
+.priority-high-bg{
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.priority-medium {
+    border-left: 6px solid #ffc107 !important;
+    border-bottom: 6px solid #ffc107 !important;
+}
+
+.priority-medium-bg{
+    background-color: #ffc107;
+    color: #ffffff;
+}
+
+.priority-low {
+    border-left: 6px solid #198754 !important;
+    border-bottom: 6px solid #198754 !important;
+}
+
+.priority-low-bg{
+    background-color: #198754;
+    color: #ffffff;
+}
+
+.taskSection {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Filter Select */
+#filter {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    width: 200px;
+}
+
+#filter>option:hover {
+    color: #dc3545;
+}
+
+/* -------------------------
+   EMPTY MESSAGE
+-------------------------- */
+
+.empty {
+    text-align: center;
+    padding: 50px 20px;
+    opacity: 0.8;
+}
+
+.empty h3 {
+    font-weight: 700;
+    color: #0b5ed7;
+}
+
+.empty p {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* -------------------------
+   TASK LIST
+-------------------------- */
+
+#taskList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* Task Cards */
+#taskList .card {
+    width: 23%;
+    border-radius: 14px;
+    border: none;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.25s ease;
+}
+
+#taskList .card:hover {
+    transform: translateY(-3px);
+}
+
+/* Priority colour labels */
+#taskList .card-header {
+    background: #f8f9fa;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    padding: 8px 12px;
+    font-weight: 600;
+}
+
+
+.priority-high {
+    border-left: 6px solid #dc3545 !important;
+}
+
+.priority-medium {
+    border-left: 6px solid #ffc107 !important;
+}
+
+.priority-low {
+    border-left: 6px solid #198754 !important;
+}
+
+/* Delete Button */
+#taskList .btn {
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+}
+
+/* -------------------------
+   RESPONSIVE DESIGN
+-------------------------- */
+
+/* Large Tablets */
+@media (max-width: 1200px) {
+    
+    #taskList .card {
+        width: 31%;
+    }
+}
+
+/* Tablets (<= 992px) */
+@media (max-width: 992px) {
+    
+    #taskList .card {
+        width: 48%;
+    }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+
+    #taskHead, #taskDsc {
+        width: auto;
+    }
+    .inpSection {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    #addBtn {
+        width: 100%;
+    }
+
+    #taskList .card {
+        width: 100%;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+    #taskHead, #taskDsc {
+        width: auto;
+    }
+
+    #taskList {
+        gap: 18px;
+    }
+    #taskList .card {
+        width: 100% !important;
+    }
+}
