@@ -1,0 +1,16 @@
+* Create a Student Management System :
+
+    *   For HTML :
+        -   Give a tittle using H1
+        -   partition :
+            -   group inputs on one side of the page.
+
+                *   Student Details :
+                    -   Name :
+                    -   Student ID :
+                    -   Gender :
+                    -   Course :
+                    -   Age :
+
+            -   the other one shows list of students if any with search and filer option.
+                -   Every student row must include Edit and Delete button working for respective student.

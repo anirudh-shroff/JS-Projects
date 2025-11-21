@@ -1,0 +1,149 @@
+/* -------------------------
+   GLOBAL STYLING
+------------------------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    color: #212529;
+    margin: 0;
+    padding: 0 20px;
+}
+
+h1, h3 {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* -------------------------
+   CARD-LIKE FORM
+------------------------- */
+#form-area {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+#form-area:hover {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+#studentForm input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+#studentForm input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 10px rgba(13, 110, 253, 0.2);
+    outline: none;
+}
+
+#studentForm button {
+    width: 150px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #fff;
+    background: #0d6efd;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+#studentForm button:hover {
+    background: #0b5ed7;
+    transform: translateY(-2px);
+}
+
+/* -------------------------
+   SEARCH INPUT
+------------------------- */
+#searchInput {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    width: 100%;
+    max-width: 400px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+#searchInput:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13,110,253,0.2);
+    outline: none;
+}
+
+/* -------------------------
+   TABLE STYLING
+------------------------- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 14px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+table th {
+    background-color: #0d6efd;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tbody tr:hover {
+    background-color: #e2e6ea;
+    transition: background-color 0.2s ease;
+}
+
+button.btn-sm {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+button.btn-sm:hover {
+    transform: translateY(-1px);
+}
+
+/* -------------------------
+   EMPTY STATE
+------------------------- */
+#studentList p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* -------------------------
+   RESPONSIVE LAYOUT
+------------------------- */
+@media (max-width: 992px) {
+    .d-flex.gap-4 {
+        flex-direction: column;
+    }
+}
