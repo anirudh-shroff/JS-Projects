@@ -3,20 +3,36 @@ const min = document.querySelector("#inpM");
 const sec = document.querySelector("#inpS");
 
 const btn = document.querySelector("#btn");
+const pauseBtn = document.querySelector("#pause");
+const inputs = [hrs, min, sec]
 
 let timer;
 let isRunning = false;
 
+// btn.style.backgroundColor = "green";
+
 btn.addEventListener("click", () => {
+
+    if (!inputs.some(input => input.value)) {
+        alert("please set timer!")
+        return;
+    }
 
     if (isRunning) {
         clearInterval(timer)
-        hrs.value = "00";
-        min.value = "00";
-        sec.value = "00";
+        hrs.value = "";
+        min.value = "";
+        sec.value = "";
         btn.innerHTML = "Start";
+
+        btn.classList.remove("btn-danger");
+        btn.classList.add("btn-success");
+
         isRunning = false;
         // console.log("HI")
+        inputs.forEach(input => input.disabled = false);
+        inputs.forEach(input => input.classList.add("bg-white"))
+
         return;
     }
 
@@ -29,13 +45,24 @@ btn.addEventListener("click", () => {
     if (totalSeconds <= 0) return;
 
     btn.innerHTML = "Stop";
+
+    btn.classList.remove("btn-success");
+    btn.classList.add("btn-danger");
+
     isRunning = true;
+
+    inputs.forEach(input => input.disabled = true);
+    inputs.forEach(input => input.classList.add("bg-white"))
 
     timer = setInterval(() => {
 
         if (totalSeconds <= 0) {
             clearInterval(timer);
             alert("Countdown Finished");
+
+            inputs.forEach(input => input.disabled = false);
+            inputs.forEach(input => input.classList.add("bg-white"))
+
             return;
         }
 
@@ -51,4 +78,18 @@ btn.addEventListener("click", () => {
 
     }, 1000)
 
+})
+
+pauseBtn.addEventListener("click", () => {
+    if (!isRunning) return;
+    clearInterval(timer);
+    console.log("first")
+    isRunning = false;
+    btn.innerHTML = "Start";
+
+    btn.classList.remove("btn-danger");
+    btn.classList.add("btn-success");
+
+    inputs.forEach(input => input.disabled = false);
+    inputs.forEach(input => input.classList.add("bg-white"))
 })
