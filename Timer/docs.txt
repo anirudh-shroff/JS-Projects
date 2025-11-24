@@ -1,0 +1,14 @@
+*   Countdown Timer :
+    *   For HTML Part :
+        1.  create an input for the target time in (hours/minutes/seconds) format
+        2.  create a start/stop btn,
+        3.  show the countdown in same input area
+        4.  add pause btn
+
+    *   For CSS Part :
+
+
+    *   For JavaScript Part :
+        1.  store the input values in variables
+        2.  use setTimer and clearInterval funtions to run the calculations and stop them.
+        3.  add a pause feature.
