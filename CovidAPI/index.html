@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="container">
+
+    <header class="text-center">
+        <div>
+            <h1><span>Covid-19</span>Status</h1>
+        </div>
+    </header>
+    <main class="mt-5 d-flex flex-column justify-content-center gap-4">
+        <div class="m-auto">
+            <input type="text" name="" id="name">
+            <button class="btn btn-primary" id="searchBtn">Search</button>
+        </div>
+        <div class="m-auto">
+            <div id="stats" class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Covid-19 Status</h5>
+                    <img id="flag" src="" alt="Country Flag" class="flag-img mb-3">
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li id="locationName" class="list-group-item">An item</li>
+                    <li id="confirmedCases" class="list-group-item">An item</li>
+                    <li id="deathCase" class="list-group-item">A second item</li>
+                    <li id="surviveCases" class="list-group-item">A third item</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
