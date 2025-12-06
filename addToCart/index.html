@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- header -->
+
+    <header>
+
+        <div id="navigation">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary py-3">
+                <div class="container d-flex justify-content-between px-0">
+                    <div>
+                        <button class="navbar-brand border-0 bg-transparent" href="#">
+                            <img src="./assets/images/01logoNav.svg" alt="">
+                        </button>
+                        <!-- toggle menu bar -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <li>Home</li>
+                        <li>Page</li>
+                        <li>Shop</li>
+                        <li>Blog</li>
+                        <li>Contact Us</li>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="d-flex" role="search">
+
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            <button class="btn btn-primary mx-2 position-relative"
+                                onclick="window.location='./cart.html'" type="button">
+                                <i class="ri-shopping-cart-2-line"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                    id="cartCounter">
+                                    0
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- hero section -->
+        <section class="heroSection my-5">
+            <div class="shape">
+                <img src="./assets/images/shape.png" alt="">
+            </div>
+            <div class="rightImg">
+                <img src="./assets/images/02.png" alt="">
+            </div>
+            <div class="hero flex pt-7 pb-7">
+                <div class="container heroContent">
+                    <p>45% MEGA SALE OFFER</p>
+                    <h1>Discover Customizable Furniture</h1>
+                    <button class="button">Discover Now</button>
+                    <p class="heroDsc">Unlock unbeatable savings on every purchase. Introducing our new collection of
+                        stylish and comfortable sofas, designed to elevate your living space with modern elegance.</p>
+                </div>
+                <div class="container heroImg">
+                    <img src="./assets/images/01.png" alt="heroImg" class="img1">
+                </div>
+            </div>
+        </section>
+
+        <!-- product section -->
+
+        <section>
+            <div class="container">
+                <div class="sectionTitleArea d-flex justify-content-between">
+                    <div class="sectionTitle">
+                        <h6>Product Collection</h6>
+                        <h2>Featured Collections</h2>
+                    </div>
+                    <ul class="filter d-flex align-items-center justify-content-center m-0">
+                        <li>All Collection</li>
+                        <li>Popular</li>
+                        <li>On Sale</li>
+                        <li>Best Rated</li>
+                    </ul>
+                </div>
+                <div class="productList row gy-3" id="productList">
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
